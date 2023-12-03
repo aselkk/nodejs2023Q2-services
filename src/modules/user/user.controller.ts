@@ -29,11 +29,8 @@ export class UserController {
   }
 
   @Post()
-  createUser(@Body() crateUserDto: CreateUserDto): Promise<User> {
-    const user = new User();
-    user.login = crateUserDto.login;
-    user.password = crateUserDto.password;
-    return this.userService.create(user);
+  createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
+    return this.userService.create(createUserDto.toEntity());
   }
 
   @Put(':id')
