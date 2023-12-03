@@ -12,9 +12,6 @@ import { UserModule } from './modules/user/user.module';
       url: process.env.DATABASE_URL,
       entities: [],
       synchronize: process.env.NODE_ENV !== 'production',
-      ssl: {
-        rejectUnauthorized: false,
-      },
     }),
     UserModule,
   ],
